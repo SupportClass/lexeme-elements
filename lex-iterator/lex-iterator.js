@@ -1,14 +1,6 @@
 (function () {
 	'use strict';
 
-	/**
-	 * @customElement
-	 * @polymer
-	 *
-	 * A base class for iterating through an array of items and playing an animation for each one in series.
-	 * This element is not useful on its own, it needs to be extended by some other element which implements
-	 * a _showItem method.
-	 */
 	class LexIterator extends Polymer.Element { // eslint-disable-line no-unused-vars
 		static get properties() {
 			return {
@@ -126,5 +118,16 @@
 	if (!window.Lexeme) {
 		window.Lexeme = {};
 	}
-	window.Lexeme.Iterator = LexIterator;
+
+	/**
+	 * @customElement
+	 * @memberof Lexeme
+	 * @constructor
+	 * @extends {Polymer.Element}
+	 * @implements {LexIterator}
+	 * @summary Base class that provides the core API for Polymer's meta-programming
+	 * features including template stamping, data-binding, attribute deserialization,
+	 * and property change observation.
+	 */
+	Lexeme.Iterator = LexIterator;
 })();
