@@ -1,0 +1,34 @@
+{
+	"plugins": {
+		"local": {
+			"browsers": [
+				"chrome"
+			]
+		},
+		"sauce": {
+			"disabled": true,
+			"browsers": [{
+				"browserName": "chrome",
+				"platform": "Windows 10",
+				"version": "latest"
+			}]
+		},
+		"istanbul": {
+			"dir": "coverage",
+			"reporters": [
+				"lcov",
+				"html",
+				"text"
+			],
+			"include": [
+				"**/lex-*.html",
+				"**/lex-*.js"
+			],
+			"exclude": [
+				"/bower_components/**/*",
+				"/test",
+				"test"
+			]
+		}
+	}
+}
